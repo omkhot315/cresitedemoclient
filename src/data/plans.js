@@ -60,6 +60,14 @@ export const PLANS = [
     customDomain: true,
     highlighted: false,
   },
+  {
+  id: "basicmonth",
+  name: "Website for month",
+  price: 10,
+  priceLabel: "₹10",
+  per: "/month",
+  ...
+}
 ];
 
 export const getPlan = (id) => PLANS.find((p) => p.id === id) || null;
