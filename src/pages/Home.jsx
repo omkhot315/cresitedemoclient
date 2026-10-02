@@ -396,7 +396,7 @@ export default function Home() {
               {
                 id: "basic",
                 name: "Website",
-                price: "₹999", per: "/year", cta: "Start building", to: ctaTo, hot: false,
+                price: "₹9", per: "/year", cta: "Start building", to: ctaTo, hot: false,
                 blurb: "A complete website on your own Cresite link.",
                 feats: [
                   "1 business website",
