@@ -72,7 +72,7 @@ export default function SubscriptionExpired({ business, onRenew, isOwner = false
                   onClick={onRenew}
                   className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#5046E5] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-indigo-500/25 transition hover:-translate-y-0.5 hover:bg-[#4338CA]"
                 >
-                  <RefreshCw size={16} /> Renew Now — ₹999 / year
+                  <RefreshCw size={16} /> Renew Now — ₹9 / year
                 </button>
                 <Link
                   to="/dashboard"
