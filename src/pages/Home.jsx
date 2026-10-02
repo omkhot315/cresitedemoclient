@@ -392,6 +392,20 @@ export default function Home() {
           </FadeIn>
           <div className="mx-auto mt-12 grid max-w-5xl gap-5 lg:grid-cols-3">
             {[
+       {
+                id: "basic month",
+                name: "Website for month",
+                price: "₹10", per: "/month", cta: "Start building", to: ctaTo, hot: false,
+                blurb: "A complete website on your own Cresite link.",
+                feats: [
+                  "1 business website",
+                  "cresite.in/your-brand link",
+                  "All sections — menu, team, gallery, reviews, FAQs",
+                  "WhatsApp & call buttons",
+                  "Unlimited edits, any time",
+                  "Mobile, tablet & desktop design",
+                ],
+              },
               {
                 id: "basic",
                 name: "Website",
