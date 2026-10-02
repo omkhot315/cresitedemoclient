@@ -9,7 +9,7 @@ export const PLANS = [
   {
     id: "basic",
     name: "Website",
-    price: 999,
+    price: 9,
     priceLabel: "₹999",
     per: "/year",
     blurb: "A complete website on your own Cresite link.",
