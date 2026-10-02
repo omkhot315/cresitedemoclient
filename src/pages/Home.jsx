@@ -189,7 +189,7 @@ export default function Home() {
         <FadeIn delay={0.1} className="relative mx-auto mt-14 max-w-7xl px-5 sm:px-8">
           <div className="grid grid-cols-2 gap-6 border-t border-black/10 pt-8 sm:grid-cols-4">
             {[
-              { v: "5", l: "demo sites live" },
+              { v: "50+", l: "sites live" },
               { v: "85+", l: "business categories" },
               { v: "~5 min", l: "from idea to live" },
               { v: "0", l: "lines of code" },
