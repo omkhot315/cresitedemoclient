@@ -623,8 +623,8 @@ export default function Home() {
             {/* Uses the same shared BrandMark as the navbar. Enable the PNG once in PlatformNav.jsx. */}
             <BrandMark />
             <p className="mt-5 max-w-xs text-[13.5px] leading-relaxed text-white/55">
-              The website platform for local business. One calm dashboard, a link you can share anywhere, and designs
-              that make small look mighty.
+              Helping local businesses build a professional online presence—simply, beautifully, and affordably.
+.
             </p>
           </div>
           <div className="lg:col-span-2">
