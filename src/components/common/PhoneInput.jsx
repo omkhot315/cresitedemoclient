@@ -10,7 +10,11 @@ export const INDIA_CODE = "+91";
 
 /** Return the 10 local digits from a stored Indian phone value. */
 export function localPhoneDigits(value = "") {
-  let digits = String(value).replace(/\D/g, "");
+  let str = String(value).trim();
+  // Stored values look like "+91 98765..." - drop the prefix literally, so a
+  // partly typed number is never mistaken for part of the country code.
+  if (str.startsWith("+91")) str = str.slice(3);
+  let digits = str.replace(/\D/g, "");
   if (digits.length > 10 && digits.startsWith("91")) digits = digits.slice(2);
   if (digits.length > 10 && digits.startsWith("0")) digits = digits.slice(1);
   if (digits.length > 10) digits = digits.slice(-10);
@@ -30,7 +34,7 @@ export function isCompleteIndianPhone(value = "") {
 export default function PhoneInput({
   value,
   onChange,
-  placeholder = "98765 43210",
+  placeholder = "90909 09090",
   className = "",
   inputClassName = "",
   style,
@@ -53,7 +57,14 @@ export default function PhoneInput({
         inputMode="numeric"
         autoComplete="tel-national"
         value={local}
-        onChange={(e) => onChange?.(toIndianPhone(e.target.value))}
+        onChange={(e) => {
+          const raw = e.target.value;
+          // Pasted numbers like "+91 98765 43210" / "919876543210" / "098765..." are cleaned;
+          // normal typing just keeps the first 10 digits.
+          const digits = raw.replace(/\D/g, "");
+          const pasted = raw.trim().startsWith("+") || digits.length >= 12 || (digits.length === 11 && digits.startsWith("0"));
+          onChange?.(toIndianPhone(pasted ? localPhoneDigits(raw) : digits.slice(0, 10)));
+        }}
         placeholder={placeholder}
         maxLength={16}
         required={required}
